@@ -1,0 +1,21 @@
+<h2>List of Workouts</h2>
+<p>
+<%= link_to 'submit new workout log', root_path %>
+</p>
+<table>
+    <tr>
+      <th> Weight </th>
+      <th> Exercise </th>
+      <th> Repetition </th>
+      <th> Time</th>
+    </tr>
+    <%= @workouts.each do |workout| %>
+    <tr>
+      <td><%= workout.weight %></td>
+      <td><%= workout.exercise %>/td>
+      <td><%= workout.repetition %></td>
+      <td><%= workout.time %></td>
+      <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+    </tr>
+    <% end %>
+</table>

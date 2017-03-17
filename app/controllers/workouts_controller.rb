@@ -5,11 +5,13 @@ class WorkoutsController < ApplicationController
     
     
     def create 
-      @workouts = Workout.new(workout_params)
+      @workouts = Workout.new(workouts_params)
       
       if @workouts.save
+        
         flash[:notice] = "Workout was Successfully logged"
-        redirect_to workout_path(@workouts)
+        
+        redirect_to workouts_path(@workouts)
       else
         render 'new'
       end
@@ -18,9 +20,14 @@ class WorkoutsController < ApplicationController
     def show
       @workout = Workout.find(params[:id])
     end
+    
+    def index 
+      @workouts = Workout.all
+    end
+    
     private
     
-    def workout_params
-      params.require(:workouts).permit(:weight, :exercise, :repetition, :time)
+    def workouts_params
+      params.require(:workout).permit(:weight, :exercise, :repetition, :time)
     end
 end
