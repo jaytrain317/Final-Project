@@ -25,6 +25,14 @@ class WorkoutsController < ApplicationController
       @workouts = Workout.all
     end
     
+    def destroy 
+      @workouts = Workout.find(params[:id])
+      @workouts.destroy
+      flash[:notice] = "Workout was succesfully deleted"
+      redirect_to workouts_path
+    end
+  
+    
     private
     
     def workouts_params

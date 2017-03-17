@@ -1,21 +1,26 @@
 <h2>List of Workouts</h2>
+
 <p>
-<%= link_to 'Submit New Workout Log', root_path %>
+<%= link_to 'Create Workout Log', new_workout_path %>
 </p>
+
+
 <table>
     <tr>
       <th> Weight </th>
       <th> Exercise </th>
-      <th> Repetition </th>
+      <th> Repetition </th>l
       <th> Time</th>
     </tr>
-    <%= @workouts.each do |workout| %>
+    <% @workouts.each do |workout| %>
     <tr>
       <td><%= workout.weight %></td>
       <td><%= workout.exercise %></td>
       <td><%= workout.repetition %></td>
       <td><%= workout.time %></td>
       <td><%= link_to 'Edit', edit_workout_path(workout) %></td>
+      <td><%= link_to 'Show', workout_path(workout) %></td>
+      <td><%= link_to 'Delete', workout_path(workout), method: :delete, data: {confirm: "Are you sure?"} %></td>   
     </tr>
     <% end %>
 </table>
