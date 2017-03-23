@@ -13,21 +13,21 @@
     <%= form_for @workouts do |f| %>
     
         <p>
-            <%= f.label :weight %> </br>
+            <%= f.label :weight, 'How much do you weigh?' %> </br>
             <%= f.number_field :weight %>
         </p>
         <p>
-            <%= f.label :exercise %> </br>
+            <%= f.label :exercise, 'What exercise did you perform?' %> </br>
             <%= f.text_field :exercise %> 
         </p>
         
         <p>
-            <%= f.label :repetition %> </br>
+            <%= f.label :repetition, 'How many repetitions did you perform?' %> </br>
             <%= f.number_field :repetition %>
         </p>
         
         <p>
-            <%= f.label :time %> </br>
+            <%= f.label :time, 'How long, in minutes, did you perform the exercise?' %> </br>
             <%= f.number_field :time %>
         </p>
         
@@ -37,4 +37,4 @@
     
     <%end%>
     
-    <%= link_to 'Back to Workout List', workouts_path %>
+    <%= link_to 'Back to Main Page', workouts_path %>
