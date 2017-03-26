@@ -1,4 +1,6 @@
 class WorkoutsController < ApplicationController
+  before_action :set_workout, only: [:edit, :update, :show, :destroy]
+  
     def new
       @workouts = Workout.new
     end
@@ -18,12 +20,12 @@ class WorkoutsController < ApplicationController
     end
     
     def edit
-      @workouts = Workout.find(params[:id])
+     
     end
     def update
-      @workouts = Workout.find(params[:id])
+      
       if @workouts.update(workouts_params)
-        flash[:notice] = "Workout was succesfully updated"
+        flash[:notice] = "Workout was Successfully updated"
         redirect_to workouts_path
       else
         render 'edit'
@@ -31,7 +33,7 @@ class WorkoutsController < ApplicationController
     end
     
     def show
-      @workouts = Workout.find(params[:id])
+      
     end
     
     def index 
@@ -39,16 +41,19 @@ class WorkoutsController < ApplicationController
     end
     
     def destroy 
-      @workouts = Workout.find(params[:id])
+      
       @workouts.destroy
-      flash[:notice] = "Workout was succesfully deleted"
+      flash[:notice] = "Workout was Successfully deleted"
       redirect_to workouts_path
     end
   
     
     private
-    
-    def workouts_params
-      params.require(:workout).permit(:weight, :exercise, :repetition, :time)
-    end
+      def set_workout
+        @workouts = Workout.find(params[:id])
+      end
+      
+      def workouts_params
+       params.require(:workout).permit(:weight, :exercise, :repetition, :time)
+      end
 end
