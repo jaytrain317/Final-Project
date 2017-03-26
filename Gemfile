@@ -49,8 +49,6 @@ group :development do
 end
 
 group :production do
-  gem 'postgresql', '~> 1.0'
   gem 'pg'
-  gem 'activerecord-postgresql-adapter', '~> 0.0.1'
   gem 'rails_12factor'
 end
