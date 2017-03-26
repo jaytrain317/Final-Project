@@ -29,5 +29,5 @@ production:
   pool: 5
   timeout: 5000
   host: localhost
-  username: jaytrain317
-  password: <%= ENV['gscube317'] %>
+  username: 
+  password:
