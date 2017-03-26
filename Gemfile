@@ -30,7 +30,7 @@ gem 'hoe', '~> 3.16'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'puma', '~> 3.8', '>= 3.8.2'
-gem 'pg'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
