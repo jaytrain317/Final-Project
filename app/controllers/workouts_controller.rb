@@ -2,12 +2,12 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, only: [:edit, :update, :show, :destroy]
   
     def new
-      @workouts = Workout.new
+      @workouts = current_user.workouts.new
     end
     
     
     def create 
-      @workouts = Workout.new(workouts_params)
+      @workouts = current_user.workouts.new(workouts_params)
       
       if @workouts.save
         
@@ -37,7 +37,7 @@ class WorkoutsController < ApplicationController
     end
     
     def index 
-      @workouts = Workout.all
+      @workouts = current_user.workouts.all
     end
     
     def destroy 
@@ -50,7 +50,7 @@ class WorkoutsController < ApplicationController
     
     private
       def set_workout
-        @workouts = Workout.find(params[:id])
+        @workouts = current_user.workouts.find(params[:id])
       end
       
       def workouts_params
