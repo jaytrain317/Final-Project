@@ -41,7 +41,7 @@ group :development, :test do
   gem 'byebug'
 
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
-  gem 'cucumber-rails', '~> 1.4', '>= 1.4.5'
+  gem 'machinist', '~> 2.0'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver', '~> 3.3'
   gem 'selenium-client', '~> 1.2', '>= 1.2.18'
