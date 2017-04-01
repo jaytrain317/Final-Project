@@ -6,6 +6,11 @@ ruby '2.3.0'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+gem 'cucumber-rails', '~> 1.4', '>= 1.4.5'
+gem 'capybara', '~> 2.13'
+gem 'selenium-webdriver', '~> 3.3'
+gem 'selenium-client', '~> 1.2', '>= 1.2.18'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
